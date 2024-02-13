@@ -20,6 +20,13 @@ app.get('/', (req, res) => {
     });
 });
 
+
+app.get('/hhh', (req, res) => {
+    res.status(200).json({
+        status: 'tttte'
+    })
+});
+
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
