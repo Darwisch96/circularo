@@ -1,4 +1,4 @@
-name: first deploy helm chart 
+name: run nodejs app for circularo
 
 on: workflow_dispatch
 
