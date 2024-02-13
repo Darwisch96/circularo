@@ -24,7 +24,7 @@ jobs:
         run: npm install
 
       - name: Archive application
-        run: zip -r deploy.zip * -x "**node_modules**"
+        run: zip -r deploy.zip * .[^.]* -x "**node_modules**"
 
       # - name: AWS credentials
       #   uses: aws-actions/configure-aws-credentials@v1
