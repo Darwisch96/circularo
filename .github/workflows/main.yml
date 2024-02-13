@@ -1,0 +1,43 @@
+name: first deploy helm chart 
+
+on: workflow_dispatch
+
+env:
+  aws_region: us-east-1
+  
+jobs:
+  Deploy: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+
+      - name: Setup nodejs
+        uses: actions/setup-node@v4
+          with:
+          node-version: '18'
+      
+      - name: Install dependencies
+        run: npm install
+
+      - name: Archive application
+        run: zip -r deploy.zip * -x "**node_modules**"
+
+      # - name: AWS credentials
+      #   uses: aws-actions/configure-aws-credentials@v1
+      #   with:
+      #     aws-access-key-id: ${{ secrets.MY_AWS_ACCESS_KEY_ID }}
+      #     aws-secret-access-key: ${{ secrets.MY_AWS_SECRET_ACCESS_KEY }}
+      #     aws-region: us-east-2
+
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: Circularotest
+          environment_name: Circularotest-env
+          version_label: 'v-${{ github.run_number  }}'
+          region: us-east-2
+          deployment_package: deploy.zip
