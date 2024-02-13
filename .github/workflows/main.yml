@@ -1,7 +1,9 @@
 name: run nodejs app for circularo
 
-on: workflow_dispatch
-
+on:
+  push:
+    branches:
+      - 'main'
 env:
   aws_region: us-east-1
   
