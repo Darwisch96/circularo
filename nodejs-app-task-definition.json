@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:132894672218:task-definition/nodejs-app-task-defination:6",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:378787751424:task-definition/nodejs-app-task-defination:2",
     "containerDefinitions": [
         {
             "name": "nodejs-app",
-            "image": "132894672218.dkr.ecr.us-east-1.amazonaws.com/nodejs-app",
+            "image": "378787751424.dkr.ecr.us-east-1.amazonaws.com/nodejs-app",
             "cpu": 0,
             "portMappings": [
                 {
@@ -33,10 +33,10 @@
         }
     ],
     "family": "nodejs-app-task-defination",
-    "taskRoleArn": "arn:aws:iam::132894672218:role/ecsTaskExecutionRole",
-    "executionRoleArn": "arn:aws:iam::132894672218:role/ecsTaskExecutionRole",
+    "taskRoleArn": "arn:aws:iam::378787751424:role/mostafacircularo",
+    "executionRoleArn": "arn:aws:iam::378787751424:role/mostafacircularo",
     "networkMode": "awsvpc",
-    "revision": 6,
+    "revision": 2,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -82,7 +82,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-02-15T15:59:28.509Z",
-    "registeredBy": "arn:aws:iam::132894672218:root",
+    "registeredAt": "2024-02-15T16:58:20.392Z",
+    "registeredBy": "arn:aws:iam::378787751424:root",
     "tags": []
 }
