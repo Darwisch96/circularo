@@ -44,10 +44,12 @@ jobs:
       - run: |
           echo "get variable content"
           echo "${{ steps.task-def.outputs.task-definition }}"
-      #- name: Deploy Amazon ECS task definition
-      #  uses: aws-actions/amazon-ecs-deploy-task-definition@v1
-      #  with:
-      #    task-definition: ${{ steps.task-def.outputs.task-definition }}
-      #    service: nodejs-app-service
-      #    cluster: Circularo
-      #    wait-for-service-stability: true
+          cat ${{ steps.task-def.outputs.task-definition }}
+          
+      - name: Deploy Amazon ECS task definition
+        uses: aws-actions/amazon-ecs-deploy-task-definition@v1
+        with:
+          task-definition: ${{ steps.task-def.outputs.task-definition }}
+          service: nodejs-app-service
+          cluster: Circularo
+          wait-for-service-stability: "true"
