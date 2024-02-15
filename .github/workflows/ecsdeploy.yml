@@ -41,6 +41,9 @@ jobs:
           task-definition: nodejs-app-task-definition.json 
           container-name: nodejs-app
           image: ${{ steps.build-image.outputs.image }}    
+      - run: |
+          echo "get variable content"
+          echo "${{ steps.task-def.outputs.task-definition }}"
       #- name: Deploy Amazon ECS task definition
       #  uses: aws-actions/amazon-ecs-deploy-task-definition@v1
       #  with:
