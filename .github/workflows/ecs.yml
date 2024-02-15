@@ -27,7 +27,6 @@ jobs:
         id: build-image
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          IMAGE_TAG: ${{ github.sha }}
           REPOSITORY: nodejs-app
         run: |
           # Build a docker container and
