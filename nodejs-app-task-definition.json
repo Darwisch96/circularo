@@ -1,9 +1,9 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:378787751424:task-definition/nodejs-app-task-defination:2",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:132894672218:task-definition/nodejs-app-task-defination:11",
     "containerDefinitions": [
         {
             "name": "nodejs-app",
-            "image": "378787751424.dkr.ecr.us-east-1.amazonaws.com/nodejs-app",
+            "image": "132894672218.dkr.ecr.us-east-1.amazonaws.com/nodejs-app:latest",
             "cpu": 0,
             "portMappings": [
                 {
@@ -16,10 +16,8 @@
             ],
             "essential": true,
             "environment": [],
-            "environmentFiles": [],
             "mountPoints": [],
             "volumesFrom": [],
-            "ulimits": [],
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
@@ -27,16 +25,15 @@
                     "awslogs-group": "/ecs/nodejs-app-task-defination",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
-                },
-                "secretOptions": []
+                }
             }
         }
     ],
     "family": "nodejs-app-task-defination",
-    "taskRoleArn": "arn:aws:iam::378787751424:role/mostafacircularo",
-    "executionRoleArn": "arn:aws:iam::378787751424:role/mostafacircularo",
+    "taskRoleArn": "arn:aws:iam::132894672218:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::132894672218:role/ecsTaskExecutionRole",
     "networkMode": "awsvpc",
-    "revision": 2,
+    "revision": 11,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
@@ -82,7 +79,7 @@
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2024-02-15T16:58:20.392Z",
-    "registeredBy": "arn:aws:iam::378787751424:root",
+    "registeredAt": "2024-02-15T17:09:56.856Z",
+    "registeredBy": "arn:aws:iam::132894672218:root",
     "tags": []
 }
